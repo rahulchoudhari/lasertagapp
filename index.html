@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lasertag Game Operator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lasertag Game Operator</h1>
+        
+        <!-- Tournament Setup Section -->
+        <div id="setup-section" class="section">
+            <h2>Tournament Setup</h2>
+            
+            <div class="form-group">
+                <label for="tournament-type">Tournament Type:</label>
+                <select id="tournament-type">
+                    <option value="3">Best of 3</option>
+                    <option value="5">Best of 5</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="num-teams">Number of Teams (2-4):</label>
+                <input type="number" id="num-teams" min="2" max="4" value="2">
+            </div>
+            
+            <div class="form-group">
+                <label for="players-per-team">Players per Team:</label>
+                <input type="number" id="players-per-team" min="1" max="10" value="6">
+            </div>
+            
+            <div id="team-colors-container"></div>
+            
+            <button id="create-tournament-btn" class="btn btn-primary">Create Tournament</button>
+        </div>
+        
+        <!-- Game Section -->
+        <div id="game-section" class="section hidden">
+            <div class="game-header">
+                <h2>Tournament: <span id="tournament-name"></span></h2>
+                <button id="start-game-btn" class="btn btn-primary">Start Game</button>
+                <button id="reset-btn" class="btn btn-secondary">Reset Tournament</button>
+            </div>
+            
+            <div id="game-info" class="game-info">
+                <p>Current Round: <span id="current-round">0</span></p>
+                <p>Rounds to Win: <span id="rounds-to-win">0</span></p>
+            </div>
+            
+            <div id="teams-grid" class="teams-grid"></div>
+            
+            <div id="game-controls" class="hidden">
+                <button id="end-round-btn" class="btn btn-primary">End Round</button>
+                <button id="next-round-btn" class="btn btn-primary hidden">Next Round</button>
+            </div>
+            
+            <div id="winner-announcement" class="winner-announcement hidden"></div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
